@@ -1,0 +1,14 @@
+# OS X
+.DS_Store
+
+# Logs
+logs
+*.log
+
+# Compiled Dirs (http://nodejs.org/api/addons.html)
+bundle.js
+
+# Dependency directorys
+# Deployed apps should consider commenting these lines out:
+# see https://npmjs.org/doc/faq.html#Should-I-check-my-node_modules-folder-into-git
+node_modules/
