@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --content-base client/public/"
+    "start": "webpack-dev-server --content-base client/public/",
+    "build": "webpack --progress --watch",
+    "server": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.1",
     "path": "^0.12.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -28,6 +31,8 @@
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2"
   },

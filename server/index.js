@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const request = require('request');
+const request = require('request-promise');
 const app = express();
 
 const bodyParser = require('body-parser');
@@ -13,8 +13,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.get('/tweets', (req, res) => {
-  console.log(req.query);
-  res.end();
+  
+  const options = {
+    uri: 'https://api.twitter.com/1.1/statuses/user_timeline.json',
+    screen_name: 'AaronRodgers12',
+    count: 10
+  }
+
+  request(options)
+    .then(tweets => {
+      res.end(tweets);
+    })
+    .catch(err => {
+      console.log('error', err);
+      res.end();
+    })
 })
 
 app.listen(port, () => {
